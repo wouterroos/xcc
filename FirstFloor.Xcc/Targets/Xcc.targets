@@ -3,7 +3,7 @@
 Xcc.targets
 
 WARNING:  DO NOT MODIFY this file unless you are knowledgeable about MSBuild and have
-          created a backup copy. 
+          created a backup copy.
 
 Copyright (C) First Floor Software. All rights reserved.
 ***********************************************************************************************
@@ -26,9 +26,9 @@ Copyright (C) First Floor Software. All rights reserved.
       This can happen in Release builds without Trace defined for WPF projects and will error the build on the PreprocessXaml task.-->
       <PreprocessorDefinitions Condition="'$(PreprocessorDefinitions)' == ''">XCC</PreprocessorDefinitions>
       <PreprocessorDefinitions Condition="'$(PreprocessorDefinitions)' != ''">$(PreprocessorDefinitions);XCC</PreprocessorDefinitions>
-      
+
       <!-- support for Visual C++ projects (will override the definition above as 'DefineConstants' and 'ClCompile.PreprocessorDefinitions' cannot be co-existant) -->
-      <PreprocessorDefinitions Condition="%(ClCompile.PreprocessorDefinitions) != ''">%(ClCompile.PreprocessorDefinitions)</PreprocessorDefinitions>
+      <!--<PreprocessorDefinitions Condition="%(ClCompile.PreprocessorDefinitions) != ''">%(ClCompile.PreprocessorDefinitions)</PreprocessorDefinitions>-->
     </PropertyGroup>
 
     <!-- ensure __ANDROID__ symbol is defined when targetting Android platform with .NET -->
